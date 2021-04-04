@@ -4,7 +4,7 @@ import ControlContainer from './ControlBar/ControlContainer.jsx';
 import mergeSort from './mergeSort.js'
 import './App.css';
 
-const BAR_COUNT = 100;
+const BAR_COUNT = 1000;
 
 export default class App extends React.Component {
   constructor( props ) {
@@ -14,10 +14,18 @@ export default class App extends React.Component {
     };
     this.resetBars = this.resetBars.bind( this );
     this.sortBars = this.sortBars.bind( this );
+    this.updateArray = this.updateArray.bind( this );
   }
 
   componentDidMount() {
     this.resetBars( BAR_COUNT );
+  }
+
+  updateArray( newArray, currentBar, leftSorted, rightSorted ) {
+    this.setState( ( state, props ) => ( {
+      heightValues: newArray
+    } ) )
+    return null;
   }
 
   resetBars( barCount ) {
@@ -31,10 +39,9 @@ export default class App extends React.Component {
   }
 
   sortBars() {
-    let sortedArray = mergeSort( this.state.heightValues );
-    this.setState( ( state, props ) => ( {
-      heightValues: sortedArray
-    } ) )
+    let sortedArray = mergeSort( this.state.heightValues, 0, this.state
+      .heightValues.length, this.updateArray );
+
   }
 
   render() {
