@@ -1,11 +1,11 @@
-import ControlButton from './ControlButton.jsx';
+import ResetButton from './ResetButton.jsx';
+import SortButton from './SortButton.jsx';
 
-export default function ControlContainer(props){
+export default function ControlContainer( props ) {
   return (
     <div className='control-container'>
-      <ControlButton />
-      <ControlButton />
-      <ControlButton />
+      <ResetButton barCount={props.barCount} resetBars={props.resetBars} />
+      <SortButton sortBars={props.sortBars} />
     </div>
   )
 }

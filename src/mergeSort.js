@@ -1,6 +1,6 @@
 export default function mergeSort(arrayToSort){
   //Return the input array if length is 1
-  let arrayLength = arrayToSort.length();
+  let arrayLength = arrayToSort.length;
   if (arrayLength === 1) {return arrayToSort}
 
   //Splice the array into halves
@@ -20,8 +20,8 @@ export default function mergeSort(arrayToSort){
 
 function mergeLeftAndRightArrays(lArray,rArray){
   let mergedArray = [];
-  let lSize = lArray.length();
-  let rSize = rArray.length();
+  let lSize = lArray.length;
+  let rSize = rArray.length;
   let totalLength = lSize + rSize;
 
   let i = 0; //Index for left array
@@ -34,7 +34,7 @@ function mergeLeftAndRightArrays(lArray,rArray){
     if (i >= lSize) {
       mergedArray.push(rArray[j]);
       j++;
-    else if (j >= rSize) {
+    }else if (j >= rSize) {
       mergedArray.push(lArray[i]);
       i++;
     }else{
