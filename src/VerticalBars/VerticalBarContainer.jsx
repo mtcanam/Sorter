@@ -1,8 +1,10 @@
 import VerticalBar from './VerticalBar.jsx'
 
 export default function VerticalBarContainer( props ) {
-  let outArr = props.barHeights.map( ( element, idx ) =>
-    <VerticalBar key={idx} heightVal={element} /> )
+  let outArr = props.barState.barObjects.map( ( element, idx ) =>
+    <VerticalBar key={idx}
+                 heightVal={element.barHeight}
+                 currentBar={element.currentBar} /> )
   return (
     <div className='bar-container'>
       {outArr}

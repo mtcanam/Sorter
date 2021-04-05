@@ -17,6 +17,11 @@ html, body, #root, #root>div {
 }
 
 .vertical-bar{
-  background-color: grey;
+  background-color: turquoise;
   flex-grow: 1;
+  border: solid white 1px;
+}
+
+.current-bar{
+  background-color: teal;
 }
