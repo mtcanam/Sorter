@@ -1,4 +1,12 @@
-export default function mergeSort(arrayToSort, leftIndex, rightIndex, animationArray){
+export default function mergeSort(arrayToSort){
+  let animationArray = [];
+  let sortedArray = [];
+  if (arrayToSort.length < 2) { return [arrayToSort, animationArray] }
+  [sortedArray, animationArray] = mergeSortRecursiveCall(arrayToSort, 0, arrayToSort.length, animationArray)
+  return [sortedArray, animationArray];
+}
+
+function mergeSortRecursiveCall(arrayToSort, leftIndex, rightIndex, animationArray){
   //Return the input array if indices are the same
   let arrayLength = rightIndex - leftIndex;
   if (arrayLength < 2) {return [arrayToSort, animationArray]}
@@ -6,8 +14,8 @@ export default function mergeSort(arrayToSort, leftIndex, rightIndex, animationA
   //Define the splitting point of the array
   let midPoint = Math.floor(arrayLength / 2) + leftIndex;
   //Recursively call this function on both halves of the array
-  [arrayToSort, animationArray] = mergeSort(arrayToSort, leftIndex, midPoint, animationArray);
-  [arrayToSort, animationArray] = mergeSort(arrayToSort, midPoint, rightIndex, animationArray);
+  [arrayToSort, animationArray] = mergeSortRecursiveCall(arrayToSort, leftIndex, midPoint, animationArray);
+  [arrayToSort, animationArray] = mergeSortRecursiveCall(arrayToSort, midPoint, rightIndex, animationArray);
   //Merge the sorted left and right arrays
   let sortedArray = [];
   [sortedArray, animationArray] = mergeLeftAndRightArrays(arrayToSort, leftIndex, midPoint, rightIndex, animationArray)
