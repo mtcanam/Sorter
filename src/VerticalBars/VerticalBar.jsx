@@ -7,7 +7,9 @@ export default class VerticalBar extends React.Component {
   }
   render() {
     let classText =
-      `vertical-bar ${this.props.currentBar ? 'current-bar' : ''}`
+      `vertical-bar
+      ${this.props.currentBar ? 'current-bar' : ''}
+      ${this.props.currentPartition ? 'partition-bar' : ''}`
     return (
       <div className={classText} style={{height: this.props.heightVal}}></div>
     )
