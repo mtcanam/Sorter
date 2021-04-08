@@ -11,7 +11,7 @@ export default class SortButton extends React.Component {
   }
   render() {
     return (
-      <button className="btn btn-primary" onClick={this.handleClick}>Sort</button>
+      <button className="btn btn-primary" onClick={this.handleClick}>{this.props.text}</button>
     )
   }
 
