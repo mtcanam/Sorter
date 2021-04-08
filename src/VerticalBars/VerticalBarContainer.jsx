@@ -4,7 +4,8 @@ export default function VerticalBarContainer( props ) {
   let outArr = props.barState.barObjects.map( ( element, idx ) =>
     <VerticalBar key={idx}
                  heightVal={element.barHeight}
-                 currentBar={element.currentBar} /> )
+                 currentBar={element.currentBar}
+                 currentPartition={element.partitionBar} /> )
   return (
     <div className='bar-container'>
       {outArr}
