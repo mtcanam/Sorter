@@ -19,9 +19,14 @@ html, body, #root, #root>div {
 .vertical-bar{
   background-color: turquoise;
   flex-grow: 1;
-  border: solid white 1px;
+  border-radius: 3px 3px 0px 0px;
+  margin: 1px;
+  border-color: gray;
 }
 
 .current-bar{
-  background-color: teal;
+  background-color: red;
+}
+.partition-bar{
+  background-color: black;
 }
